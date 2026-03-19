@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.planeo.app",
+    "sha256_cert_fingerprints": [
+      "6C:2A:FC:03:8D:E3:00:5A:DD:74:4F:6D:7A:25:79:8D:B0:34:B0:CF:09:4F:27:69:80:AB:FA:67:B3:3A:49:68"
+    ]
+  }
+}]

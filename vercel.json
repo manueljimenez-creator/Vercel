@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/event/:path*", "destination": "/event.html" },
+    { "source": "/invite/:path*", "destination": "/invite.html" },
+    { "source": "/user/:path*", "destination": "/user.html" }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
+  ]
+}

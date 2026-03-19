@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planeo — Invitación</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #edf3eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .logo { font-size: 36px; font-weight: 800; color: #1A4734; letter-spacing: 1px; margin-bottom: 8px; }
+    .logo span { color: #FEDE00; }
+    .subtitle { color: #6b7280; font-size: 15px; margin-bottom: 32px; }
+    .btn {
+      display: block; width: 100%; padding: 16px; border-radius: 14px;
+      font-size: 16px; font-weight: 600; text-decoration: none;
+      margin-bottom: 12px; cursor: pointer;
+    }
+    .btn-primary { background: #1A4734; color: white; }
+    .btn-ios { background: #000; color: white; }
+    .btn-android { background: #1A4734; color: white; }
+    .divider { color: #9ca3af; font-size: 13px; margin: 16px 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Plan<span>eo</span></div>
+    <p class="subtitle">Tienes una invitación a un plan privado</p>
+
+    <a id="btn-open" class="btn btn-primary" href="#">Abrir invitación en Planeo</a>
+
+    <div class="divider">¿No tienes la app?</div>
+    <a class="btn btn-ios" href="https://apps.apple.com/app/planeo/id6741441893">Descargar en App Store</a>
+    <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=com.planeo.app">Descargar en Google Play</a>
+  </div>
+
+  <script>
+    const code = window.location.pathname.replace('/invite/', '').replace(/\/$/, '');
+    document.getElementById('btn-open').href = 'planeo://invite/' + code;
+  </script>
+</body>
+</html>
