@@ -12,7 +12,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #edf3eb;
+      background: #f5f5f5;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -27,12 +27,12 @@
       max-width: 380px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 12px 40px rgba(26,71,52,0.10);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
     .icon-circle {
       width: 72px; height: 72px;
       border-radius: 36px;
-      background: linear-gradient(135deg, #fc4c00, #fbc502);
+      background: linear-gradient(180deg, #fc4c00, #fbc502);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,15 +42,15 @@
     .logo {
       font-size: 32px;
       font-weight: 800;
-      color: #1A4734;
+      background: linear-gradient(180deg, #fc4c00, #fbc502);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       letter-spacing: 0.5px;
       margin-bottom: 6px;
     }
-    .logo span {
-      color: #fc4c00;
-    }
     .subtitle {
-      color: #6b7280;
+      color: #1a1a1a;
       font-size: 15px;
       line-height: 1.5;
       margin-bottom: 28px;
@@ -96,18 +96,23 @@
     }
     .btn-store {
       flex: 1;
-      background: #1A4734;
-      color: white;
+      background: white;
+      color: #1a1a1a;
       padding: 14px 10px;
       border-radius: 14px;
       font-size: 13px;
       font-weight: 600;
       text-decoration: none;
       text-align: center;
+      border: 2px solid transparent;
+      background-image: linear-gradient(white, white), linear-gradient(180deg, #fc4c00, #fbc502);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
       transition: transform 0.15s, opacity 0.15s;
     }
     .btn-store:active { transform: scale(0.97); opacity: 0.9; }
-    .btn-store-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+    .btn-store-icon { display: block; margin-bottom: 4px; }
+    .btn-store-icon svg { width: 24px; height: 24px; }
     .footer {
       margin-top: 24px;
       color: #9ca3af;
@@ -120,23 +125,27 @@
     <div class="icon-circle">
       <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
     </div>
-    <div class="logo">Plan<span>eo</span></div>
+    <div class="logo">Planėȯ</div>
     <p class="subtitle">Abre la app para ver este perfil<br/>y descubrir sus planes.</p>
 
     <a id="btn-open" class="btn btn-primary" href="#">
       <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-      Abrir en Planeo
+      Abrir en Planėȯ
     </a>
 
     <div class="divider">¿No tienes la app?</div>
 
     <div class="stores">
       <a class="btn-store" href="https://apps.apple.com/app/planeo/id6760037863">
-        <span class="btn-store-icon"></span>
+        <span class="btn-store-icon">
+          <svg viewBox="0 0 24 24" fill="#1a1a1a"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        </span>
         App Store
       </a>
       <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.planeo.app">
-        <span class="btn-store-icon">🤖</span>
+        <span class="btn-store-icon">
+          <svg viewBox="0 0 24 24" fill="#1a1a1a"><path d="M3.18 23.04L13.26 12 3.18.96c-.26.5-.18 1.1-.18 1.1V21.94s-.08.6.18 1.1zM6.54 3.64l11.38 6.37-3.15 3.14L6.54 3.64zm11.38 10.35L6.54 20.36l8.23-9.51 3.15 3.14zm2.07-3.13c.56-.32.56-.86 0-1.18l-2.07-1.16-3.47 3.48 3.47 3.48 2.07-1.16-.01-.01.01-3.45z"/></svg>
+        </span>
         Google Play
       </a>
     </div>
@@ -156,7 +165,7 @@
 
       if (isInAppBrowser) {
         if (/android/i.test(ua)) {
-          btn.href = 'intent://user/' + id + '#Intent;scheme=planeo;package=com.planeo.app;S.browser_fallback_url=' + encodeURIComponent(universal) + ';end';
+          btn.href = 'intent://user/' + id + '#Intent;scheme=planeo;package=com.planeo.app;;S.browser_fallback_url=' + encodeURIComponent(universal) + ';end';
         } else {
           btn.addEventListener('click', function(e) {
             e.preventDefault();
