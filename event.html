@@ -4,92 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planeo — Abre el plan en la app</title>
+  <meta name="apple-itunes-app" content="app-id=6760037863" />
+  <meta property="og:title" content="Planeo — Descubre planes cerca de ti" />
+  <meta property="og:description" content="Abre este plan en Planeo y descubre eventos increíbles cerca de ti." />
+  <meta property="og:type" content="website" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #edf3eb;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 24px;
     }
     .card {
       background: white;
-      border-radius: 24px;
-      padding: 40px 32px;
+      border-radius: 28px;
+      padding: 44px 28px 36px;
       max-width: 380px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 40px rgba(26,71,52,0.10);
     }
+    .icon-circle {
+      width: 72px; height: 72px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, #fc4c00, #fbc502);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .icon-circle svg { width: 36px; height: 36px; fill: white; }
     .logo {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
       color: #1A4734;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
     }
-    .logo span { color: #FEDE00; }
+    .logo span {
+      color: #fc4c00;
+    }
     .subtitle {
       color: #6b7280;
       font-size: 15px;
-      margin-bottom: 32px;
+      line-height: 1.5;
+      margin-bottom: 28px;
     }
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
       padding: 16px;
-      border-radius: 14px;
+      border-radius: 16px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       cursor: pointer;
+      transition: transform 0.15s, opacity 0.15s;
     }
+    .btn:active { transform: scale(0.97); opacity: 0.9; }
     .btn-primary {
-      background: #1A4734;
+      background: linear-gradient(180deg, #fc4c00, #fbc502);
       color: white;
     }
-    .btn-ios {
-      background: #000;
-      color: white;
-    }
-    .btn-android {
-      background: #1A4734;
-      color: white;
-    }
+    .btn svg { width: 20px; height: 20px; fill: currentColor; }
     .divider {
       color: #9ca3af;
       font-size: 13px;
-      margin: 16px 0;
+      margin: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+    .stores {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-store {
+      flex: 1;
+      background: #1A4734;
+      color: white;
+      padding: 14px 10px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+    .btn-store:active { transform: scale(0.97); opacity: 0.9; }
+    .btn-store-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+    .footer {
+      margin-top: 24px;
+      color: #9ca3af;
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
   <div class="card">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+    </div>
     <div class="logo">Plan<span>eo</span></div>
-    <p class="subtitle">Descubre planes increíbles cerca de ti</p>
+    <p class="subtitle">Alguien te ha invitado a un plan.<br/>Abre la app para ver todos los detalles.</p>
 
-    <a id="btn-open" class="btn btn-primary" href="#">Abrir en Planeo</a>
+    <a id="btn-open" class="btn btn-primary" href="#">
+      <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+      Abrir en Planeo
+    </a>
 
     <div class="divider">¿No tienes la app?</div>
 
-    <a class="btn btn-ios"
-       href="https://apps.apple.com/app/planeo/id6741441893"
-       style="margin-bottom:12px">
-      Descargar en App Store
-    </a>
-    <a class="btn btn-android"
-       href="https://play.google.com/store/apps/details?id=com.planeo.app">
-      Descargar en Google Play
-    </a>
+    <div class="stores">
+      <a class="btn-store" href="https://apps.apple.com/app/planeo/id6760037863">
+        <span class="btn-store-icon"></span>
+        App Store
+      </a>
+      <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.planeo.app">
+        <span class="btn-store-icon">🤖</span>
+        Google Play
+      </a>
+    </div>
   </div>
 
+  <p class="footer">planeoeo.com</p>
+
   <script>
-    const id = window.location.pathname.replace('/event/', '').replace(/\/$/, '');
-    document.getElementById('btn-open').href = 'planeo://event/' + id;
+    (function() {
+      var id = window.location.pathname.replace('/event/', '').replace(/\/$/, '');
+      var scheme = 'planeo://event/' + id;
+      var universal = 'https://app.planeoeo.com/event/' + id;
+      var btn = document.getElementById('btn-open');
+
+      // Detect Instagram / Facebook in-app browser
+      var ua = navigator.userAgent || '';
+      var isInAppBrowser = /Instagram|FBAN|FBAV/i.test(ua);
+
+      if (isInAppBrowser) {
+        // In-app browsers block custom schemes and Universal Links.
+        // Android: use intent URL to open app or fallback to browser
+        if (/android/i.test(ua)) {
+          btn.href = 'intent://event/' + id + '#Intent;scheme=planeo;package=com.planeo.app;S.browser_fallback_url=' + encodeURIComponent(universal) + ';end';
+        } else {
+          // iOS: redirect to universal link in external Safari
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = universal;
+          });
+        }
+      } else {
+        btn.href = scheme;
+      }
+    })();
   </script>
 </body>
 </html>
