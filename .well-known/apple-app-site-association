@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "5SZJ3PVBD3.es.planeo.app",
-        "paths": ["/event/*", "/invite/*", "/user/*"]
+        "paths": ["/event/*", "/invite/*", "/user/*", "/gift/*"]
       }
     ]
   }

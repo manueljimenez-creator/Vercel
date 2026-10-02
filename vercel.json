@@ -2,7 +2,8 @@
   "rewrites": [
     { "source": "/event/:path*", "destination": "/event.html" },
     { "source": "/invite/:path*", "destination": "/invite.html" },
-    { "source": "/user/:path*", "destination": "/user.html" }
+    { "source": "/user/:path*", "destination": "/user.html" },
+    { "source": "/gift/:path*", "destination": "/gift.html" }
   ],
   "headers": [
     {
